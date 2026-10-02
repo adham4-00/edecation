@@ -1,0 +1,12 @@
+first thing to be added to the code: stacks, 
+date: 1st of october 2026 
+a stack is a last in first out data structer where a user is concernd a stack cannot be accessed using an index but only from the top(the last element)
+the code is simple, i made a class called stack when it is initializated it crate an empty list, the two main functions are pop() and push(), push() takes an 
+input from the user and append it to the last slot in the list. pop() is already a function is python, it reads the last input in the list and deletes it, 
+the rest are self explanatory; len() gets the length of the list or how many elements exist in it, isempty() checks if the list is empty and return a bool to the user
+and is used in len(), pop() and top() and if it returned 1 it tells the user the function can't be used, top reads the top elment without deleting it. 
+
+In another class I tested the stack class with a simple code that takes an input from the user and reverse it 
+it first stores the input in a string then crates an object from the stack class. 
+the code then loops (c)times -c being the number of charcters in the string- storing each charcters in a slot using the append() method. then it loops again this time 
+using the pop() method to take out the last charcter in the stack and storing it in a new string reversing the order. finally it outputs the new string to the user.
