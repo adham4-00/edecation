@@ -1,12 +1,48 @@
-first thing to be added to the code: stacks, 
-date: 1st of october 2026 
-a stack is a last in first out data structer where a user is concernd a stack cannot be accessed using an index but only from the top(the last element)
-the code is simple, i made a class called stack when it is initializated it crate an empty list, the two main functions are pop() and push(), push() takes an 
-input from the user and append it to the last slot in the list. pop() is already a function is python, it reads the last input in the list and deletes it, 
-the rest are self explanatory; len() gets the length of the list or how many elements exist in it, isempty() checks if the list is empty and return a bool to the user
-and is used in len(), pop() and top() and if it returned 1 it tells the user the function can't be used, top reads the top elment without deleting it. 
+1- first thing to be added to the code: stacks. 
+Date: 1st of October 2026 
+A stack is a last-in, first-out data structure where a user is concerned a stack cannot be accessed using an index but only from the top (the last element)
+The code is simple; I made a class called stack. When it is initialized, it creates an empty list. The two main functions are pop() and push(). push() takes an 
+input from the user and append it to the last slot in the list. pop() is already a function in Python; it reads the last input in the list and deletes it. 
+The rest are self-explanatory; len() gets the length of the list or how many elements exist in it and isempty() checks if the list is empty and returns a bool to the user
+and is used in len(), pop() and top(), and if it returns 1, it tells the user the function can't be used. Top reads the top element without deleting it. 
+In another class I tested the stack class with a simple code that takes an input from the user and reverses it 
+It first stores the input in a string then creates an object from the stack class. 
+the code then loops (c)times -c being the number of characters in the string- storing each character in a slot using the append() method. Then it loops again this time 
+using the pop() method to take out the last character in the stack and storing it in a new string, reversing the order. Finally, it outputs the new string to the user.
 
-In another class I tested the stack class with a simple code that takes an input from the user and reverse it 
-it first stores the input in a string then crates an object from the stack class. 
-the code then loops (c)times -c being the number of charcters in the string- storing each charcters in a slot using the append() method. then it loops again this time 
-using the pop() method to take out the last charcter in the stack and storing it in a new string reversing the order. finally it outputs the new string to the user.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2- second: queues,
+Date: 3rd of October 2026 
+A queue is a first-in, first-out data structure where the user cannot access it by using an index but by using the following methods: 
+
+enqueue (adds an element to the last slot in the list) 
+dequeue (removes the first element in the list)
+len(returns the size of the list)
+is_empty(checks if the list is empty) 
+first (checks the first element in the list)
+rezise (will touch on it in a second)
+
+This time I decided not to use a dynamic list, or really not letting the language do it for me. There are three main variables in this class. 
+
+1: The size differs from the length of the list; the size represents the number of elements in the list, while the length represents the maximum size.
+2: F, or Front, is the index of the first (or earliest) element
+3: defualt_capacty determines what the initial length of the list will be. It is given to the list, and then the list initializes all of its elements as None
+Here's a breakdown of how the code works.
+
+On initialization, the front and the size of the array is set to 0, as there are no elements in the list, and the front will remain 0 until the dequeue() method is called. 
+When a user uses the enqueue() method, the code mainly does two things. 1. It increases the size of the list by one, then 2: adds the element in the earliest empty slot and 
+Not the last slot. Using the following formula, it gets the index of the first element in the list, then adds it to the size of the list to get the index that is the earliest. 
+In the list, for example, the first element to be added to the list would have an index and a size of 0 (as initialized), so the earliest empty slot would be 0, and it would add 1 to the size. 
+So the next empty index will be 1 and so on.
+Now the tricky part: what if we reach the list's last index? Do we use the resize() method? But what if there was an empty slot in the back? Could that be possible? of course 
+Let there be a simple two-slot list; both of them are filled [1,2]. Then we remove the earliest element, so [none, 2]. How can we access the first slot? by connecting them like a circle, of course.
+And how is that done? by using a remainder! So when the final slot is reached, you would loop back to the first element. Take the above list; for example, when there's only one element in the list 
+and the front's index is also now 1 (I will touch on that in the dequeue() ), you get the following equation: (1+1)%2 = 0; there's nothing left, so the answer is 0, which is the empty slot's index! 
+We are done with the most convoluted method, but we still have two more to go
+So what if the entire list is full? All the slots have a value, but the user wants more? 
+Here comes the resize method. Each time the enqueue() is used, the code checks if the list is full, and if it is, it uses the resize() method with a parameter of 2*the size of the list.
+What that method does is create a new list with the aforementioned size and transfer the content of the old list to it with a for loop while also using the 
+(f + 1)%size formula in case the front's index wasn't 0, pretty simple and finally, the dequeue method is also pretty simple.
+It stores the front element in a variable, then replaces that element with a None, then moves the front index by 1 while also using the remainder so it can loop on
+itself Then decrease the size by 1 and finally return the element.
+I couldn't come up with a simple test case to use it, so it is the same loop as before, but it just spits out the same string 
