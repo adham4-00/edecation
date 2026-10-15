@@ -1,0 +1,5 @@
+date : 5th of October 2026 
+This is the first time I tried web dev; it was a required course. I personally have little to no interest in web dev but I will add it to this file nonetheless.
+So what is a mark-up language? Very simply put it's a programming language made to be compatible with browsers, and be effective in search engines.
+it's, compared to other programming languages pretty simple, the program consists of keywords that are put between a tags <> and then content then another tag with slash to 
+emphasis the end of that specific block of code. In this folder there's a web that was asked of me as an assignment (html 1.html).

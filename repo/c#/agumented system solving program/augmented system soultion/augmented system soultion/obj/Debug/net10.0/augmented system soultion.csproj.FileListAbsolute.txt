@@ -1,0 +1,31 @@
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\bin\Debug\net10.0\augmented system soultion.exe
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\bin\Debug\net10.0\augmented system soultion.deps.json
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\bin\Debug\net10.0\augmented system soultion.runtimeconfig.json
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\bin\Debug\net10.0\augmented system soultion.dll
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\bin\Debug\net10.0\augmented system soultion.pdb
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.AssemblyInfoInputs.cache
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.AssemblyInfo.cs
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.csproj.CoreCompileInputs.cache
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.dll
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\obj\Debug\net10.0\refint\augmented system soultion.dll
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.pdb
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.genruntimeconfig.cache
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\obj\Debug\net10.0\ref\augmented system soultion.dll
+C:\Users\Adhm\source\repos\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmente.77343154.Up2Date
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\bin\Debug\net10.0\augmented system soultion.exe
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\bin\Debug\net10.0\augmented system soultion.deps.json
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\bin\Debug\net10.0\augmented system soultion.runtimeconfig.json
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\bin\Debug\net10.0\augmented system soultion.dll
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\bin\Debug\net10.0\augmented system soultion.pdb
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.AssemblyInfoInputs.cache
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.AssemblyInfo.cs
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.csproj.CoreCompileInputs.cache
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.sourcelink.json
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.dll
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\refint\augmented system soultion.dll
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.pdb
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmented system soultion.genruntimeconfig.cache
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\ref\augmented system soultion.dll
+C:\Users\Adhm\Downloads\study\repo\c#\agumented system solving program\augmented system soultion\augmented system soultion\obj\Debug\net10.0\augmente.77343154.Up2Date

@@ -1,0 +1,132 @@
+October the 15th 2026.
+In my linear algebra course the professor assigned us to make a program that can solve a system of linear equations by reducing it to its raw form using Gaussian elimination.
+I decided to write it in c# as I’m more familiar with it as opposed to python.
+In this txt file i will break down the working of that code. 
+The code has  a total of six functions in one class.
+Starting with main as the program start with it.
+Main asks the user for the number of variables in each equation and  stores it in colmens then the number of equations and stores it in rows.
+The program then creates a 2d array of[rows, colmens] in other words it makes an array that has (number of rows) arrays inside of it. 
+Then asks the user to input every element by hand with a nested for loop the first one loops over the rows or the equations themselves and the other inside it loops over each element in the equation.
+After it stores all the elements in the array it calls the first method. 
+ask_for_erorr()
+ It’s by far the simplest method out of the rest , all of it is inside a while loop that goes on forever until it’s broken it uses the same nested loop as before but this time to display the matrix, the default operation is + but if it reached the last element in a row or in an equation it uses = instead.
+Each element is followed by an index the user can use to access the element, it’s not the same as the index of the array as not to break the abstraction. 
+Then ask the user if the matrix is correct, if the user inputs n then it asks for the index of the false element and its replacement. 
+The program takes the index and gets the index of the rows by getting the remainder of the index the user typed over 10 (for example the user entered 11, the remainder of it over 10 is 1 then it subtract 1 from it and it becomes 0 so the index of the rows is 0 i.e the first row) then gets the index of the colmen by dividing it over 10 so  11 over 10 is 1  (it discards the rest as it’s an integer) 
+If the user typed y it breaks the loop. 
+Then the second method 
+reduce()
+Which reduces the system,
+Here is a breakdown of how it works, sorry if my wording is confusing as this method is itself very confusing.
+First we define five variables i will go over them as they become relevant. 
+The first for loops over the number of rows, an if statement is made which states when the leaden element of the row (i.e the elements in the diameter) is equal to 0 we will go inside of the if statement and use the first elementary operation of the Gaussian elimination which is interchanging two rows with each other
+First we define an integer c with 1 
+Then a while loop that break on two conditions,1 if i+c is equal to the number of rows(it can’t be over it as the loop will break) or the element inside of the index i+c does not equal to 0
+Inside of the loop it increment c by one as to search the next desired index
+To help visualze it here’s how it would look 
+
+i->0+1= 4 
+   0+0= 4
+In this case the if statement will trigger as the leading element is equal to 0 
+So it will check if the next element is 0 
+0+1 = 4 
+->0+0= 4
+In this case it is also 
+So it will go to the next row, but there’s no next row so it breaks the loop and goes into the next statement which is an if asking if i+c = rows, in this case it is. 
+It then equalises the error variable to  1 and breaks the entire loop and the method returns the eror variable to the user. This will be important later. 
+But for now let's focus on another scenario: what if there was a non 0 value in the element? 
+0+1 = 4 
+i+c->1+0= 4
+Will then it also breaks the loop but doesn’t trigger the following if statement. 
+Then a for loop that interchange the two rows is triggered, this one is pretty simple 
+It doesn’t use the value of i as that would change it in the bigger for loop so we equate it to a new variable, j, and a new variable k equal to 0 that will loop over the number of the colmens so the statement is k<= rows instead of the usual =rows. So when k is equal to rows it loop one more time before breaking.      
+j->0+1 = 4 
+   k^
+j+c->1+0= 4
+       k^
+It takes the value of [j+c,k] and stores it in a new variable  (temperory_storge) then it equates[j+ c , k] to    [j, k] 
+Then equates [j,k] to (temperory_storge) and increment k so it moves to the side and point at the next value,so.
+j->1+1 = 4 
+       k^
+j+c->0+0= 4
+           k^
+And repeats until the loop is broken. 
+
+So we have our matrix 
+1+0 = 4
+0+1 = 4
+
+This one is already solved so for the next for loop lat’s have another one.
+2+4+6=12 
+6+2+4=12
+4+6+2=12 
+
+This matrix will disregard all the previous code as there’s no leaden element that is equal to  0 
+We begin with a for loop that has j equated to 
+First is an if statement that checks if the current index is the leaden if so it skips if not then it makes an equaliser. Which is a new variable. 
+The variable will contain the element in the index [j,i] so in this case 6 over [i,i] which is the leaden of whichever row the i is pointing at now so 6/2 in this case . 
+Then it will loop over the matrix with a new variable k it will loop over the colmens so it will be a =< rows instead of a < rows
+The following equation is what took me the longest wrap my head around, I don’t take credit for it  
+[j,k] = [j,k]-[i.k]*equaliser
+   Remember the pointers 
+[i]->2+4+6=12 
+    k^
+[j]->6+2+4=12
+    k^
+4+6+2=12 
+
+So 6 - (2 * 6/2)
+So 0 
+Which is our entire goal we want to reduce the matrix to the row form so we need everything but the leaden to be 0 
+However we can’t do something to one element without the others in the row so 
+[i]->2+4+6=12 
+         k^
+[j]->0+2+4=12
+         k^
+4+6+2=12 
+
+And so on.
+And when the bigger loop finishes we will have our reduced raw form.
+
+
+And it will return the value of eror. 
+
+Now back to the main code it checks if eror is equal to one 
+If you remember. It was equal to one if the matrix couldn’t be reduced so it either has an infinite number of solutions or it’s unsolvable
+Then it calls the method 
+checksilotions()
+which equate eror to 3 which will tell the program later that the matrix can’t be solved. 
+However if it can be solved but with infinite solutions we need to check first. 
+The following for loop is a nested for loop that loops over every row of the matrix and add all the elements in the row and then compare to the last element if it found that they match even once then it’s a matrix with infinite solutions 
+
+Take for example 
+1+0+-7=-5
+0+1+-3=1
+0+0+0=0
+Is a matrix with infinite solutions
+So the last row would return a true, and when the if statement returns a true even once it equate eror to  2
+And return eror.
+Now the final method 
+print_result()
+This one is pretty simple it checks if eror = 2 if so it prints that there’s infinite solutions to the system
+If eror = 3 then it prints there’s no solutions 
+And finally if none of the above are true 
+It prints the index of the coleman followed by the value divided over it’s last coleman 
+For example the next matrix 
+
+6+0+0=6
+0+4+0=4
+0+0+2=2
+It will print 
+A1 = 6/6 = 1 
+And so on.
+
+And that’s my augmented system solver program
+
+In the end of the program there is almost 200 lines of code that are commented. 
+They were my attempts at making the algorithm at first, and i decided to keep them there. 
+Thanks for reading 
+
+
+
+  
