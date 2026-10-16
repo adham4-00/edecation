@@ -46,3 +46,102 @@ What that method does is create a new list with the aforementioned size and tran
 It stores the front element in a variable, then replaces that element with a None, then moves the front index by 1 while also using the remainder so it can loop on
 itself Then decrease the size by 1 and finally return the element.
 I couldn't come up with a simple test case to use it, so it is the same loop as before, but it just spits out the same string 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3 - third : linked list 
+3.1 : linked stack implemntation.
+date: 16 of october 2026.
+I'm going to go over this one quickly as possible there's two other ds I made in the past days but couldn't uplod due to personal reasons.
+a linked list is a way of storing data in memory without that is non contiguous in the memory, meaning that it's unlike an array that allocate a fixed size of the memory to itself.
+this makes is it better at handling data structers than arrays for the sole reason of not having a fixed size, I will touch on that in a sacond, for now here's how the code works.
+it's methods are the same as the methods in a regular stack too the user they work the same way, so the same methods or functions in the stack apper here, what's diffrent is the way the code handle it.
+a list is an object that within itself has a colection of objects, those objects inside of the list are called nodes. each list holds a value pointing to the first node(head of the list) and the nodes themselves.
+each node hold two values,1- the value we want to store which we will call an element. 2- the location or the address of the list's next node. 
+so for example consider a list with two nodes
+ 
+object a      object b
+_______        _______
+|  |   |       |  |   |
+|__|___|       |__|___| 
+we will have a varibal called head it will hold the address of the first node. remember that objects are not value types so they don't hold the value in them but rather hold an address to memory location that 
+stores what's inside the object 
+so we equate head to object a 
+and isnide of object a we have a variabel (a refrence type) that holds the address to the next object, we will call it next.
+so 
+
+head = object a 
+
+object a                       object b
+________________________       _______
+|value  |next =object b|       |  |   |
+|_______|______________|       |__|___|
+
+in a typcal list the value of the last object in the list's next would be null but since we are dealing with stacks. it will be the value of 
+head, NOT ONJECT A we will see why in a moment let's finish the list first
+
+  head = object a 
+
+object a                       object b
+________________________       ________________________
+|value  |next =object b|       |value  |next = head   |
+|_______|______________|       |_______|______________|
+
+"but WAIT!!" I hear you scream in agony "wouldn't the seconed next override the first?"
+no because it's the value of the next inside of a cartin object and not a universal value of next. 
+that's why we use the . operation when assigning value. we assign a value to the object inside the list not the list itself. consider two files in you computer 
+each with a diffrent name, each file contain a .txt file with the same name, each have a diffrent text inside. will changing one is content impact the other? 
+it's the value of the object next in line from them.
+now let's add a new node. in a list nodes can be added in all kinds of ways, but since it's a stack adding it in the top would be the most efficent 
+so create a new object with the _node() method 
+this summon a cunstrctor that needs two values to function, the value inside the node and the address of the old head. 
+so we store the old head in its own variable 
+self.old_head = self.head
+first we assign the new node to be the head with 
+self.head = self._node()
+and inside the node we give two peramters the value (which we have taken from the user remember this has the same methods as the stack class above so we get an e value)
+and the value of the old head which now is the next node so.
+self.head = self._node(e, self.old_head) 
+so.
+old_head = object a
+ head = new node
+
+new node                             object a                       object b
+ ____________________         ________________________       ________________________
+|   | next = old_head |       |value  |next =object b|       |value  |next = head   |
+|___|_________________|       |_______|______________|       |_______|______________|
+
+a cleaner way to do this would be assigning the value of next right away without storing the old head however this works in python because it needs to create the object first
+therefore needs to be passed the peramters first so the order of oprations would be 1- create 2- assgin next 3 - assgin head after creating the object.
+so i can't garnt that the following code will work in every languge but it will work in python
+
+self.head = self._node(e, self.head)
+
+will so much for "I'm going to go over this one quickly as possible"
+sorry if this felt like a drag but alot of my classmates seemed to struggle with this one.
+so in the end, why would we use a linked list for a stack instead od an array? for it's faster in some casses. and memeory efficent.
+a stack in an array would need resizeing to fit more values or to reduce it's size to free unused memory. 
+but with a list it will always be O(1).
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.2 - linked queue implemntation.
+date: 16 of october 2026.
+after explaining the concept of what a linked list is and implmenting a simple stack using it this entery will focus more on the code side as i explain code behinde a linked queue
+this code follows the same princple as the previous linked list and has the same functions as the queue implmented with an array 
+the three main diffrences are the __init__ function which adds a tail that points at the last node in the list this node will be called the tail, and two functions 1- enqeueu() 2- deqeueu
+1- the enqueue() function 
+it takes one preamter from the user which is the value to be stored, there's one condtion here; if this is the first elment in the list it assign its address to both the head and the tail as it is both at the same time 
+if not then it assigns the new object to be the tail by using the following logic 
+           self._tail._next = newset
+           self._tail = newset
+the first line assigns the tail(last node on the list)'s next variable(which by defualt is empty -none-) to the new node is adress and then assign the tail variable to the newest node is address making it the new last node
+unlike what we did with stacks we don't insert the node to the head,  we did that for stacks because it's a last in first out and we want reach the last element inserted faster so make it the top elment or the head 
+it's way faster to reach the first node in a list than the last as that would require going through the entire list but the first requires only going to the head(address of the first node) 
+so we enqueue nodes to the array from the last and dequeue from the first which takes us to 
+2- deqeueu()
+this one first takes the answer we need which is the first value in the list which is the first node's elment, so 
+  answer = self._head._element
+then we delete the node by moving the head to the next node is address which resides in the head(first node is address)'s next varible (the node after the current one) so
+  self._head = self._head._next
+and if the list is empty we don't need the tail to be pointing to a value we don't need so we make it none
+and the garbage collection takes care of the rest.
+again this is better than implmenting it with  an array as an array would need to be resized so it doesn't waste memory and 
+be able to fit all the values. 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
