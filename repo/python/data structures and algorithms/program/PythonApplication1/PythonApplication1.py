@@ -120,6 +120,66 @@ class linked_stack:
         self._head = self._head._next
         self._size -=1
         return answer
+class PriorityQueueBase:
+    class _item: 
+        __slots__ = "_key","_value"
+        def __init__(self, k, v): 
+            self._key = k 
+            self._value = v 
+        def __lt__(self, other): 
+            return self._key < other._key 
+    def is__empty(self): 
+        return len(self) == 0 
+class heappriorityqueue(PriorityQueueBase):
+    def perant(Self,j):
+        return (j-1)/2
+    def leftchild(Self,j):
+        return 2*j +1
+    def rightchild(Self,j):
+        return 2*j +2
+    def has_left(self, j): 
+        return self.leftchild(j) < len(self._data)
+    def has_right(self, j): 
+        return self.rightchild(j) < len(self._data)
+    def _swap(self, up , down): 
+        placeholder = self._data[up] 
+        self._data[up]  = self._data[down]
+        self._data[down] = placeholder
+    def _upheap(self , j):
+        perant = self.perant(j)
+        if j > 0 and self._data[j]< self._data[perant]:
+                self._swap(j,perant)
+                self._upheap(perant)
+    def _downheap(self, j): 
+        if self.has_left(j) :
+            left = self.leftchild(j)
+            small_child = left 
+            if self.has_right(j):
+                right = self.rightchild(j)
+                if self._data[right]< self._data[left]:
+                    small_child = right
+            if self._data[small_child] < self._data[j]:
+                self._swap(j,small_child)
+                self._downheap
+    def __init__(self):
+        self._data = []
+    def __len__(self): 
+        return len (self._data)
+    def add(self, key,value):
+        self._data.append(self._item(key,value))
+        self._upheap(len(self._data)-1)
+    def min(self):
+        if self.is__empty():
+            raise Empty('PriorityQueue is empty')
+        item = self._data[0]
+        return (item._key, item._value)
+    def remove_min(self):
+        if self.is__empty():
+            raise Empty('PriorityQueue is empty')
+        self._swap(0, len(self._data) - 1)
+        item = self._data.pop()
+        self._downheap(0)
+        return (item._key, item._value)
 class main:
         newname = ""
         s = Stack()

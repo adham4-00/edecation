@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("augmented system soultion")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5c78d6c532350fd49aeda311182b7c0c76b94aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dd244792da80b3bd8bc335377016e810b6e0046")]
 [assembly: System.Reflection.AssemblyProductAttribute("augmented system soultion")]
 [assembly: System.Reflection.AssemblyTitleAttribute("augmented system soultion")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

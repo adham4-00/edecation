@@ -145,3 +145,32 @@ and the garbage collection takes care of the rest.
 again this is better than implmenting it with  an array as an array would need to be resized so it doesn't waste memory and 
 be able to fit all the values. 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4 - priority queue implemntation.
+date 12 of november 2026 
+a priority queue is a queue but instead of poping the first elment it pops the element with the highest priority. 
+i don't have the strongest grasp on python since i'm naitve to c# so i tried out inhertince with this one i made two classes PriorityQueueBase and heappriorityqueue and made the later inhert from the former 
+since a priorty queue that does not oprate dirctly on numbers need a priority KEY and the value itself i decided to make the ADT an array(but in true it's a list since python doesn't have any, i always call lists arrays when i use python ) 
+with each index holding a pointer to an item and in that item two values, the key that gives the item it's priority and the value itself.
+and then i override the larger than oprator in python itself, since i want the oprator to compare the keys and nothing else.
+and then a simple is_empty function.
+now the heap class. 
+the first function in it is perant() it takes an index in the tree and gets it perant, a tree has multiple levels and the diffrence between each level is a knewen merger since its a binry tree, meaning each node have a max of two children.
+a very simple equation to get the perant of a node is ((node_index-1)/2) 
+the same princple is used for the next two functions but going downward instead of up, and getting the child node. 
+so since we want to get down which means farther in the tree we multiply instead of devide, so  ((node_index*2)+1) for left child and  ((node_index*2)+2) for the right one (becuase there's a diffrence of 1 between them) 
+the hasleft and right functions work of the previous ones, where they get the index that would be in left or right respectfully and check if it exceeds the array is lenght, if so then there's no childs
+_swap() takes two indexes and swap thier content.
+_upheap() takes an index and swaps it with the node  upove if it's not zero(there won't be anything above it) and the key of the index is smaller than the one above it (thus giving it a higher priority) then swaping it with the perant,
+then do the same with the perant (who is now a child)
+_downheap() much like the upheap but...down! this time it around it checks if the node has a left child, if not then no swaping could happen if there is then it assigns that child (which will be the left one) to be the small child
+and then checks if there's a right if there's it compares it to the small child, if it is even smaller it makes it the small child then it compare the small child to the perant node if it finds the child to be smaller it swaps and call the downheap() on the small child again.
+ensuring it will always end up to be 
+perant < left child < right child.
+init makes the array that the pointers will be stored in 
+len returens the length of the array 
+add() appends a new element to the array from the last index avilable and then upheap it 
+min is much like top where it retuerns the value on the top without poping it, it returns the the value of index 0 since it will have the highest priority 
+remove min swaps the value in the first and the last indexes so you can pop the index with the highest priority from the end 
+then it downheaps the value of the date in the index 0 (because it was originly in the tail of the array)
+
+

@@ -108,7 +108,7 @@ namespace augmented_system_soultion
                     ii++;
                 }
                 char a = Convert.ToChar(Console.ReadLine());
-                if (a == 'y')
+                if (a == 'y' || a == 'Y' )
                 {
                     break;
                 }
